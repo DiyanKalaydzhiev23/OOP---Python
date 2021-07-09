@@ -1,4 +1,4 @@
-from project.player import *
+from project.player import Player
 
 
 class Guild:
@@ -23,7 +23,7 @@ class Guild:
                 self.players.remove(p)
                 p.guild = "Unaffiliated"
                 return f"Player {p.name} has been removed from the guild."
-            return f"Player {player_name} is not in the guild."
+        return f"Player {player_name} is not in the guild."
 
     def guild_info(self):
         return f"Guild: {self.name}\n{''.join([p.player_info() for p in self.players])}"
