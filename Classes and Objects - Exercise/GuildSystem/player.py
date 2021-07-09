@@ -15,4 +15,4 @@ class Player:
 
     def player_info(self):
         skills = '\n'.join([f"==={skill} - {cost}" for skill, cost in self.skills.items()])
-        return f"Name: {self.name}\nGuild: {self.guild}\nHP: {self.hp}\nMP: {self.mp}\n{skills}"
+        return f"Name: {self.name}\nGuild: {self.guild}\nHP: {self.hp}\nMP: {self.mp}\n{skills}\n"

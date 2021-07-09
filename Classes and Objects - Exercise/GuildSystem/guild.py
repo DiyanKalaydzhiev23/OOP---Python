@@ -1,4 +1,4 @@
-from project.player import Player
+from GuildSystem.player import Player
 
 
 class Guild:
@@ -27,3 +27,14 @@ class Guild:
 
     def guild_info(self):
         return f"Guild: {self.name}\n{''.join([p.player_info() for p in self.players])}"
+
+
+player = Player("George", 50, 100)
+player1 = Player("asd", 50, 100)
+print(player.add_skill("Shield Break", 20))
+print(player1.add_skill("Shield Break", 20))
+print(player.player_info())
+guild = Guild("UGT")
+print(guild.assign_player(player))
+print(guild.assign_player(player1))
+print(guild.guild_info())
