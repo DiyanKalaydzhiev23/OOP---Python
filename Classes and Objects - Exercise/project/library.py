@@ -19,6 +19,8 @@ class Library:
         for user in self.user_records:
             if user.user_id == user_id:
                 if new_username != user.username:
+                    if user.username in self.rented_books:
+                        self.rented_books[new_username] = self.rented_books.pop(user.username)
                     user.username = new_username
                     return f"Username successfully changed to: {new_username} for userid: {user_id}"
                 return "Please check again the provided username - it should be different than the username used so far!"
