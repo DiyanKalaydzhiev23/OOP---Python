@@ -1,11 +1,16 @@
 class Customer:
+    id = 1
 
-    def __init__(self, name, age, id):
+    def __init__(self, name, address, email):
         self.name = name
-        self.age = age
-        self.id = id
-        self.rented_dvds = []
+        self.address = address
+        self.email = email
+        self.id = __class__.id
+        __class__.id += 1
+
+    @staticmethod
+    def get_next_id():
+        return __class__.id
 
     def __repr__(self):
-        return f"{self.id}: {self.name} of age {self.age} has {len(self.rented_dvds)} rented DVD's" \
-               f" ({', '.join(dvd.name for dvd in self.rented_dvds)})"
+        return f"Customer <{self.id}> {self.name}; Address: {self.address}; Email: {self.email}"
